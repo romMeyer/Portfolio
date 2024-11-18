@@ -1,0 +1,39 @@
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Couche translucide sur le fond */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Fond d'écran de la page */
+:host {
+  display: block;
+  min-height: 100vh; /* S'étend sur toute la hauteur */
+  background-position: center; /* Centrer l'image */
+  background-attachment: fixed; /* L'image reste fixe au défilement */
+  background-repeat: no-repeat; /* Pas de répétition */
+
+}
+
+.mat-card {
+  padding: 20px;
+  background: white;
+  opacity: 0.95; /* Légèrement translucide */
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  mat-chip {
+    font-size: 1rem;
+  }
+}
+

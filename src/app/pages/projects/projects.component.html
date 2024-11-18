@@ -1,0 +1,11 @@
+<app-title title="Mes Projets"></app-title>
+
+<div class="card-container">
+  <mat-card *ngFor="let project of projects" class="card">
+    <div class="card" (click)="showProjectDetails(project.id)">
+      <img mat-card-image [src]="project.image" alt="{{ project.title }}" />
+      <mat-card-title>{{ project.title }}</mat-card-title>
+      <mat-card-content>{{ project.description }}</mat-card-content>
+    </div>
+  </mat-card>
+</div>
