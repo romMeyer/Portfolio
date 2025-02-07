@@ -7,7 +7,9 @@
 .navbar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    width: 205px;
+    padding-top: 20px;
 }
 
 .navbarButton{

@@ -1,17 +1,29 @@
 export interface ProjectDto{
     id: number;
-    title: String;
-    description: String;
-    image: String;
+    title: string;
+    description: string;
+    image: string;
 }
 
 export interface ProjectDetailDto{
     id: number;
-    title: String;
-    description: String;
-    image: String;
-    roleItems: String[];
-    technologies: String[];
-    results: String[];
+    title: string;
+    description: string;
+    image: string;
+    roleItems: string[];
+    technologies: string[];
+    results: string[];
+    information: ProjectInformation[];
 
+
+}
+
+export interface ProjectInformation{
+    title: string;
+    content?: string;
+    content2?: string;
+    image?: string;
+    image2?: string;
+    class?: string;
+    size?: string;
 }

@@ -8,7 +8,9 @@ import { TitleComponent } from '../shared/title/title.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import {MatChipsModule} from '@angular/material/chips'; 
+import { MatChipsModule } from '@angular/material/chips'; 
+import { ProjectsService } from '../services/ProjectService';
+import { HttpClientModule } from '@angular/common/http'; // Importez HttpClientModule
 
 @NgModule({
   declarations: [
@@ -23,7 +25,11 @@ import {MatChipsModule} from '@angular/material/chips';
     TitleComponent,    
     MatToolbarModule,
     MatListModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule
+  ],
+  providers: [
+    ProjectsService
   ]
 })
 export class PagesModule { }

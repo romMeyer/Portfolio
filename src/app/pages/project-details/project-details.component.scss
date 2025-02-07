@@ -10,6 +10,58 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
+.containerInfo {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Couche translucide sur le fond */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.cardInformation {
+  max-width: 46%;
+  height: 100%;
+  .image{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  
+  }
+}
+.cardInformation > * {
+  margin-bottom: 1.5%;
+}
+.cardInformation > *:last-child {
+  margin-bottom: 0;
+}
+
+.introduction{
+  max-width: 90%;
+}
+
+.petit{
+  width: 49%;
+}
+
+.moyen{
+  width: 70%;
+}
+
+.grand{
+  width: 90%;
+}
+
+img{
+  width: 100%;
+}
 
 /* Fond d'écran de la page */
 :host {

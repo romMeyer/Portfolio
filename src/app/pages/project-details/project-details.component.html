@@ -23,37 +23,60 @@
 
 <mat-card>
     <mat-card-header>
-    <mat-card-title>Technologies utilisées</mat-card-title>
+        <mat-card-title>Technologies utilisées</mat-card-title>
     </mat-card-header>
+
     <mat-card-content>
     <div class="tech-list">
         <mat-chip-listbox>
-        <mat-chip color="primary">Java</mat-chip>
-        <mat-chip color="accent">Spring Boot</mat-chip>
-        <mat-chip color="warn">Angular</mat-chip>
-        <mat-chip color="primary">PostgreSQL</mat-chip>
-        <mat-chip color="accent">Docker</mat-chip>
-        <mat-chip color="warn">Git</mat-chip>
+                <mat-chip *ngFor="let item of project.technologies">{{ item }}</mat-chip>
         </mat-chip-listbox>
     </div>
     </mat-card-content>
+
 </mat-card>
 
 <mat-card>
     <mat-card-header>
-    <mat-card-title>Résultats obtenus</mat-card-title>
+        <mat-card-title>Résultats obtenus</mat-card-title>
     </mat-card-header>
+
     <mat-card-content>
     <mat-list>
-        <mat-list-item>Réduction du temps de traitement des incidents critiques de 30%.</mat-list-item>
-        <mat-list-item>Mise en place d’un pipeline CI/CD pour des déploiements plus rapides.</mat-list-item>
-        <mat-list-item>Amélioration de la satisfaction des utilisateurs finaux grâce à une interface modernisée.</mat-list-item>
-        <mat-list-item>Renforcement de la sécurité grâce à des audits réguliers et des mises à jour proactives.</mat-list-item>
+        <mat-list-item *ngFor="let item of project.results">{{ item }}</mat-list-item>
     </mat-list>
     </mat-card-content>
 </mat-card>
 
 </div>
+<div class="containerInfo ">
+    
+    <ng-container *ngFor="let item of project.information">
+        <mat-card [class]="item.class " class="cardInformation"   >
+            
+            <mat-card-header>
+                <mat-card-title>{{ item.title }}</mat-card-title>
+            </mat-card-header>
+    
+            <mat-card-content>
+                {{ item.content }}
+            </mat-card-content>
+            <div class="image">
+                <img [class]="item.size" *ngIf="item.image" mat-card-image [src]="item.image" [alt]="item.image">
+                <img [class]="item.size" *ngIf="item.image2" mat-card-image [src]="item.image2" [alt]="item.image2">
+            </div>
+            
+            
+            <mat-card-content>
+                {{ item.content2 }}
+            </mat-card-content>
+    </mat-card>
+    </ng-container>
+    
+        
+
+</div>
+
 
 <mat-toolbar color="primary" class="footer">
 <span>&copy; 2024 Votre Nom</span>

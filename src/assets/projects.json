@@ -1,0 +1,127 @@
+{
+    "projects":[
+       {
+          "id":1,
+          "title":"Projet A79",
+          "description":"This is the description for card 1.",
+          "image":"assets/projets/entete/projetA79.png"
+       },
+       {
+          "id":2,
+          "title":"Projet Cerema",
+          "description":"This is the description for card 2.",
+          "image":"assets/projets/entete/projetCerema.png"
+       },
+       {
+          "id":3,
+          "title":"...",
+          "description":"This is the description for card 3.",
+          "image":"./assets/projets/entete/projetCerema.jpg"
+       }
+    ],
+    "projectDetails":[
+       {
+          "id":1,
+          "title":"Projet A79",
+          "description":"CA1.",
+          "image":"assets/projets/entete/projetA79.png",
+          "roleItems":[
+             "Entrainement de l'IA",
+             "Paramètrage des controlleurs",
+             "Retours de performances sur autoroutes"
+          ],
+          "technologies":[
+             "YOLO",
+             "Linux",
+             "SSH",
+             "RTSP"
+          ],
+          "results":[
+             "Réduction du temps de traitement des incidents critiques de 30%.",
+             "Mise en place d’un pipeline CI/CD pour des déploiements plus rapides.",
+             "Amélioration de la satisfaction des utilisateurs finaux grâce à une interface modernisée.",
+             "Renforcement de la sécurité grâce à des audits réguliers et des mises à jour proactives."
+          ],
+          "information":[
+            {
+               "title": "Introduction",
+               "image": "./assets/projets/a79/comment_compté_1.png",
+               "image2":"./assets/projets/a79/comment_compté_2.png",
+               "content": "Le projet consiste à compter les véhicules présents dans les aires d'autoroute afin d'indiquer sur des panneaux numériques le nombre de places restantes. Le comptage est réalisé par Yolo4, un algorithme capable de détecter les objets au premier regard, en effectuant la détection et la classification simultanément. Cycounter, notre outil permettant le traitement des résultats de Yolo8, fonctionne de la manière suivante :",
+               "content2" : "Une fois le camion entré dans le cadre jaune, il est compté +1 pour l'entrée de l'aire de repos. Idem pour la sortie, où il sera compté -1",
+               "class": "introduction",
+               "size": "petit"
+            },
+            {
+               "title":"Mon rôle",
+               "content": "Le projet vise à compter les véhicules présents dans les aires d'autoroute afin d'afficher sur des panneaux numériques le nombre de places restantes. Pour ce faire, nous utilisons Yolo4, un algorithme capable de détecter et de classifier les objets simultanément. Cette technologie permet de fournir des informations en temps réel aux conducteurs, améliorant ainsi la gestion des aires de repos et facilitant la recherche de places disponibles pour les usagers de la route.",
+               "content2": "Mon rôle dans ce projet fut la création d'une documentation détaillée, couvrant la définition des classes, l'installation de l'architecture et des serveurs, ainsi que l'entraînement et les tests. J'ai également redéfini le modèle en modifiant les classes et en effectuant des annotations, et j'ai créé les fichiers de poids pour Yolo8 en entraînant plusieurs versions et en appliquant des augmentations. De plus, j'ai mis en place les contrôleurs pour Yolo8 sur le terrains en installant Ubuntu 22, en configurant le réseau, et en mettant en service l'outil de comptage sur les aires de repos., développé une application Python pour récupérer les vidéos des contrôleurs (sur sites)",
+               "class": "introduction"
+            },
+            {
+               "title": "Modèles",
+               "image": "./assets/projets/a79/détection_de_nuit.png",
+               "image2": "./assets/projets/a79/détection_multiple.png",
+               "content": "Pour fonctionner, Yolo a besoin d'un modèle, une banque d'images, où chaque image est accompagnée d'un fichier texte précisant l'emplacement et les classes des véhicules présents sur l'image.",
+               "content2": "J'ai dû réannoter les images de l'ancien modèle et ajouter plus de 1000 images pour que notre modèle soit spécifiquement entraîné à identifier et classer des objets appartenant aux catégories suivantes : voiture, van, camion, bus et autres. J'ai aussi ajouté des centaines d'images de nuit car l'ancien modèle avait des lacunes. Maintenant, le modèle est plus que performant.",
+               "size": "grand"
+            },
+            {
+               "title": "Entrainement",
+               "image": "./assets/projets/a79/metric.png",
+               "content": "Une fois notre modèle annoté, il nous faut entraîner Yolo8 sur celui-ci. Mon rôle ici était de comprendre la démarche pour adapter notre outil qui facilite cette création. J'ai utilisé la configuration \"predict\" pour le modèle Yolo, en ajustant les paramètres tels que le nombre d'epochs (nombre de passages de l'IA sur le modèle). Le modèle YOLO a été initialisé avec des poids pré-entraînés sur un grand ensemble de données, comme COCO (Common Objects in Context). Cette initialisation permet au modèle de bénéficier de connaissances préalables sur la détection d'objets. Le processus d'entraînement utilise toutes nos images annotées. Le modèle ajuste ses poids et ses paramètres à chaque itération pour minimiser la différence entre ses prédictions et les annotations fournies. J'ai, dans un second temps, ajusté les hyperparamètres tels que le taux de rotation des images et la saturation des couleurs pour optimiser les performances du modèle.",
+               "content2" : "Une fois l'entraînement terminé, le modèle est testé sur des images qu'il n'a jamais vues pour évaluer ses performances en détection d'objets. Nos résultats sont enregistrés sous forme de tableaux et de graphiques. Les données mAP50 et mAP50-95 nous permettent de savoir si l'entraînement est concluant ou non. Plus les valeurs se rapprochent de 1, plus le modèle est performant.",
+               "size": "moyen"
+            },
+            {
+               "title": "Création des contrôleurs",
+               "content": "Pour passer notre projet sur Yolo8, nous avons dû refaire les contrôleurs à partir de zéro. Pour cela, j'ai dû recréer un contrôleur type. J'ai d'abord installé Ubuntu 22.04 et l'ai configuré sur le réseau de manière à y avoir accès depuis notre laboratoire jusqu'à mon bureau, en passant par SSH ou Samba, un logiciel nous permettant d'accéder à notre contrôleur à partir d'une interface d'explorateur de fichiers. Ensuite, j'ai dû installer Python, les drivers Nvidia ainsi que le Cuda toolkit, qui permettent de lancer l'outil de comptage de poids lourds développé en Python et d'utiliser pleinement la carte graphique de notre contrôleur, qui est fortement sollicitée lors des détections avec Yolo. Pour finir, j'ai installé notre outil de comptage et les configurations des aires de repos pour une implémentation sur site. J'ai aussi implémenté nos tests pour vérifier que notre contrôleur est capable d'utiliser Yolo ainsi que de traiter des flux RTSP, ceux fournis par les caméras des aires de repos.",
+               "size": "grand",
+               "class": "introduction"
+            }
+          ]
+       },
+       {
+          "id":2,
+          "title":"Projet Cerema",
+          "description":"En tant que prestataire, j’ai participé à un projet de tierce maintenance applicative (TMA) pour le CEREMA. L’objectif principal était de garantir la disponibilité, la performance et l’évolutivité des applications utilisées par cet organisme public stratégique.",
+          "image":"assets/projets/entete/projetCerema.png",
+          "roleItems":[
+             "Analyse et résolution des anomalies signalées par les utilisateurs.",
+             "Développement de nouvelles fonctionnalités selon les besoins du CEREMA.",
+             "Amélioration continue des performances et de la sécurité des applications.",
+             "Rédaction de documentations techniques pour faciliter la transmission des connaissances."
+          ],
+          "technologies":[
+             "Java",
+             "SpringBoot",
+             "Angular",
+             "Postgres",
+             "Docker",
+             "Git"
+          ],
+          "results":[
+             "Réduction du temps de traitement des incidents critiques de 30%.",
+             "Mise en place d’un pipeline CI/CD pour des déploiements plus rapides.",
+             "Amélioration de la satisfaction des utilisateurs finaux grâce à une interface modernisée.",
+             "Renforcement de la sécurité grâce à des audits réguliers et des mises à jour proactives."
+          ]
+       },
+       {
+          "id":3,
+          "title":"...",
+          "description":"...",
+          "image":"./assets/projets/card3.jpg",
+          "roleItems":[
+             "..."
+          ],
+          "technologies":[
+             "...",
+             "..."
+          ],
+          "results":[
+             "..."
+          ]
+       }
+    ]
+ }
