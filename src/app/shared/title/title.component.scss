@@ -1,10 +1,8 @@
-@use '@angular/material' as mat;
-@use '../../../theme.scss' as *; // Importe le fichier contenant les variables
+@use "../../../styles.scss" as *; // Importe le fichier contenant les variables
 
 
 
 h1 {
-    background-color: mat.get-color-from-palette($portfolio-primary, 500); // Arrière-plan primaire
-    padding: 16px;    
-}
-  
+    padding: 16px;
+    background-color: $portfolio-primary;
+}   

@@ -1,10 +1,14 @@
 // styles.scss
 
 @use '@angular/material' as mat;
-@use './theme' as *; // Import du fichier theme.scss
+@use './theme' as theme; // Import du fichier theme.scss
 
 // Inclure les styles communs de base d'Angular Material
 @include mat.core();
+
+$portfolio-primary: mat.get-theme-color(theme.$portfolio-theme, primary);
+$portfolio-accent: mat.get-theme-color(theme.$portfolio-theme, accent);
+$portfolio-warn: mat.get-theme-color(theme.$portfolio-theme, warn);
 
 // Ajouter des styles globaux
 html, body { 
@@ -14,4 +18,9 @@ html, body {
 body { 
   margin: 0; 
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  
+}
+
+mat-typography{
+  height: 100vh;  
 }

@@ -6,7 +6,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
-import { TitleComponent } from "./shared/title/title.component";
 import {MatDividerModule} from '@angular/material/divider'; 
 
 @Component({
@@ -20,7 +19,6 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     PagesModule,
     SharedModule,
-    TitleComponent,
     MatDividerModule
   ],
   templateUrl: './app.component.html',

@@ -1,63 +1,10 @@
-// theme.scss
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
 
 // Définition des palettes personnalisées
-$custom-primary-palette: (
-  50: #E0F7FA,
-  100: #B2EBF2,
-  200: #80DEEA,
-  300: #4DD0E1,
-  400: #26C6DA,
-  500: #00BCD4, // Couleur principale
-  600: #00ACC1,
-  700: #0097A7, 
-  800: #00838F,
-  900: #006064,
-  contrast: (
-    50: #fff,
-    100: #fff,
-    200: #fff,
-    300: #fff,
-    400: #fff,
-    500: #fff,
-    600: #fff,
-    700: #fff, 
-    800: #fff,
-    900: #fff,
-  )
-);
-
-$custom-accent-palette: (
-  50: #FFF3E0,
-  100: #FFE0B2,
-  200: #FFCC80,
-  300: #FFB74D,
-  400: #FFA726,
-  500: #FF9800,
-  600: #FB8C00,
-  700: #F57C00,
-  800: #EF6C00,
-  900: #E65100,
-  contrast: (
-    50: #fff,
-    100: #fff,
-    200: #fff,
-    300: #fff,
-    400: #fff,
-    500: #fff,
-    600: #fff,
-    700: #fff, 
-    800: #fff,
-    900: #fff,
-  )
-);
 
 // Définition des palettes pour le thème
-$portfolio-primary: mat.define-palette($custom-primary-palette);
-$portfolio-accent: mat.define-palette($custom-accent-palette);
+$portfolio-primary: mat.define-palette(mat.$cyan-palette);
+$portfolio-accent: mat.define-palette(mat.$green-palette);
 $portfolio-warn: mat.define-palette(mat.$red-palette);
 
 // Création du thème

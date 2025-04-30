@@ -4,13 +4,13 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProjectsComponent } from './projects/projects.component';
-import { TitleComponent } from '../shared/title/title.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips'; 
 import { ProjectsService } from '../services/ProjectService';
 import { HttpClientModule } from '@angular/common/http'; // Importez HttpClientModule
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { HttpClientModule } from '@angular/common/http'; // Importez HttpClientM
   imports: [
     CommonModule,
     MatCardModule,
-    TitleComponent,    
     MatToolbarModule,
     MatListModule,
     MatChipsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     ProjectsService

@@ -6,6 +6,8 @@
 
   .card {
     width: 300px;
+    background-color: #dfdfdf;
+    color: #1c1c1c;
   }
 
 
@@ -15,7 +17,6 @@ mat-card img {
   height: auto;
   border-radius: 10%;
   font-size: 30px;
-  background-color: #fff;
 }
 
 mat-card-title{
