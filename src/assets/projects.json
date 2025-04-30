@@ -96,16 +96,35 @@
              "Java",
              "SpringBoot",
              "Angular",
-             "Postgres",
+             "Postgres / Postgis / H2",
              "Docker",
              "Git"
           ],
           "results":[
-             "Réduction du temps de traitement des incidents critiques de 30%.",
-             "Mise en place d’un pipeline CI/CD pour des déploiements plus rapides.",
-             "Amélioration de la satisfaction des utilisateurs finaux grâce à une interface modernisée.",
-             "Renforcement de la sécurité grâce à des audits réguliers et des mises à jour proactives."
-          ]
+             "Ajout de fonctionnalités diverses.",
+             "Mise en place de tests unitaires et tests d'intégrations.",
+             "Renforcement de la sécurité des applications.",
+             "Dockerisation des applications pour une mise en recette Eiffate.",
+             "Satisfactions du client."
+          ],
+          "information": [
+            {
+               "title": "Introduction",
+               "image": "./assets/projets/a79/comment_compté_1.png",
+               "image2": "./assets/projets/a79/comment_compté_2.png",
+               "content": "Le projet CEREMA est un projet de TTMA (tierce maintenance multi-applicative). Cela signifie que nous nous chargeons des applications du Cerema pour les maintenir ou ajouter de nouvelles fonctionnalités. Le client nous met à disposition le code sur Gitlab, nous fait part de ses besoins grâce à l'outil Projektor, puis nous commande les tickets nécessaires.",
+               "content2": "Une fois cela fait, nous étudions la demande et fournissons un chiffrage (nombre de jours-homme que nous vendons pour réaliser la demande). Si le chiffrage est accepté, nous commençons les développements et livrons le résultat sur le Gitlab du client.",
+               "class": "introduction",
+               "size": "petit"
+            },
+            {
+               "title": "Mon rôle",
+               "content": "Dans ce projet, j'ai eu l'occasion de passer par toutes les étapes de la gestion d'un projet de TTMA. J'ai réalisé des \"prises en compte produit\", c'est-à-dire que j'ai étudié les applications du client, compris ce qui fonctionne (et ce qui ne fonctionne pas), fouiné pour savoir s'il n'y avait pas d'énormités. Et j'ai informé le client de ce qui allait ou non en l'incitant à commander des mises à niveau.",
+               "content2": "J'ai pu développer les fonctionnalités demandées sur une multitude d'applications n'ayant aucun rapport au niveau métier. Par exemple, une application de gestion des ressources humaines, une application de gestion des eaux usées et de l'assainissement, une application de suivi des ressources minérales sous forme de carte de la France, une application de suivi des utilisations des gares sous forme de carte de la France, et une application de conseil aux collectivités sur le choix des plantes à utiliser en fonction de multiples critères.",
+               "class": "introduction"
+            }
+
+         ]
        },
        {
           "id":3,
