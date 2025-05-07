@@ -19,7 +19,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatIconModule,
     PagesModule,
     SharedModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

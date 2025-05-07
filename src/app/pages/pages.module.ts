@@ -8,9 +8,9 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatChipsModule } from '@angular/material/chips'; 
-import { ProjectsService } from '../services/ProjectService';
-import { HttpClientModule } from '@angular/common/http'; // Importez HttpClientModule
 import { SharedModule } from '../shared/shared.module';
+import { CompetencesComponent } from './competences/competences.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { SharedModule } from '../shared/shared.module';
     NotFoundComponent,
     ProjectsComponent,
     ProjectDetailsComponent,
+    CompetencesComponent
   ],
   imports: [
     CommonModule,
@@ -25,11 +26,8 @@ import { SharedModule } from '../shared/shared.module';
     MatToolbarModule,
     MatListModule,
     MatChipsModule,
-    HttpClientModule,
-    SharedModule
-  ],
-  providers: [
-    ProjectsService
+    SharedModule,
+    MatButtonModule
   ]
 })
 export class PagesModule { }

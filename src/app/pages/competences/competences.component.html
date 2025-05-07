@@ -1,0 +1,15 @@
+<app-title title="Mes compétences"></app-title>
+
+<div class="card-container">
+  <mat-card *ngFor="let competence of competences" class="card">
+    <mat-card-title>{{ competence.title }}</mat-card-title>
+    <div class="subCompetences">
+
+      <ng-container *ngFor="let item of competence.sousCompetence">
+        <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
+        <mat-card-content>{{ item.description }}</mat-card-content>
+      </ng-container>
+      
+    </div>
+  </mat-card>
+</div>

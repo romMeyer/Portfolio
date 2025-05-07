@@ -1,0 +1,40 @@
+@use "../../../styles.scss" as *; // Importe le fichier contenant les variables
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+  }
+
+.card {
+  width: 30%;
+  background-color: #dfdfdf;
+  color: #1c1c1c;
+  height: 100%;
+}
+
+mat-card-title{
+  font-size: 30px;
+  font-weight: 500;
+  background-color: $portfolio-accent;
+  color: white;
+}
+
+mat-card-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1c1c1c;
+  margin-top: 15px;
+}
+
+.subCompetences{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+mat-card-content{ 
+  text-align: justify;
+}
