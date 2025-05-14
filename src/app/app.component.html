@@ -1,17 +1,29 @@
 <mat-drawer-container class="main">
-  <mat-drawer mode="side" opened>
-
+  <mat-drawer
+    [mode]="drawerMode"
+    [opened]="drawerOpened"
+    (closedStart)="drawerOpened = false"
+  >
     <div class="navbar">
-      <a routerLink="/profil" class="space"><img src="/assets/photoProfil.jpg" alt="Photo Romain Meyer" height="150" width="150" priority></a>
-      <a mat-stroked-button color="primary" routerLink="/profil" class="navbarButton">Qui suis-je ?</a>
-      <a mat-stroked-button color="primary" routerLink="/projets" class="navbarButton">Mes projets</a>
-      <a mat-stroked-button color="primary" routerLink="/competences" class="navbarButton">Compétences</a>
+      <a routerLink="/profil" class="space" (click)="closeDrawerIfMobile()">
+        <img src="/assets/photoProfil.jpg" alt="Photo Romain Meyer" height="150" width="150" />
+      </a>
+      <a mat-stroked-button color="primary" routerLink="/profil" class="navbarButton" (click)="closeDrawerIfMobile()">
+        Qui suis-je ?
+      </a>
+      <a mat-stroked-button color="primary" routerLink="/projets" class="navbarButton" (click)="closeDrawerIfMobile()">
+        Mes projets
+      </a>
+      <a mat-stroked-button color="primary" routerLink="/competences" class="navbarButton" (click)="closeDrawerIfMobile()">
+        Compétences
+      </a>
     </div>
-
   </mat-drawer>
 
   <mat-drawer-content>
+    <button *ngIf="drawerMode === 'over'" mat-icon-button (click)="drawerOpened = true" class="menu-button"    >
+      <mat-icon>menu</mat-icon>
+    </button>
     <router-outlet></router-outlet>
   </mat-drawer-content>
-  
 </mat-drawer-container>

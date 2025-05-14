@@ -96,3 +96,10 @@ img{
   background-color: $portfolio-primary;
 
 }
+
+// Téléphone
+@media (max-width: 768px) {
+  .cardInformation {
+    max-width: 85%;
+  }
+}
