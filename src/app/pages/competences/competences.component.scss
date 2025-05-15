@@ -39,6 +39,10 @@ mat-card-content{
   text-align: justify;
 }
 
+mat-toolbar{
+  margin-top: 4.5%;
+}
+
 
 // Téléphone
 @media (max-width: 768px) {
@@ -49,5 +53,6 @@ mat-card-content{
 
   .card {
     width: 85%;
+    margin-bottom: 30px;
   }
 }

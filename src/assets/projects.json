@@ -3,20 +3,20 @@
        {
           "id":1,
           "title":"Projet A79",
-          "description":"This is the description for card 1.",
+          "description":"Comptage poids lourds avec l'intelligence artificielle.",
           "image":"assets/projets/entete/projetA79.png"
        },
        {
           "id":2,
           "title":"Projet Cerema",
-          "description":"This is the description for card 2.",
+          "description":"Tièrce maintenance applicative.",
           "image":"assets/projets/entete/projetCerema.png"
        },
        {
           "id":3,
-          "title":"...",
-          "description":"This is the description for card 3.",
-          "image":"./assets/projets/entete/projetCerema.jpg"
+          "title":"RAG",
+          "description":"Génération augmentée de récupération.",
+          "image":"./assets/projets/entete/rag.png"
        }
     ],
     "projectDetails":[
@@ -110,8 +110,6 @@
           "information": [
             {
                "title": "Introduction",
-               "image": "./assets/projets/a79/comment_compté_1.png",
-               "image2": "./assets/projets/a79/comment_compté_2.png",
                "content": "Le projet CEREMA est un projet de TTMA (tierce maintenance multi-applicative). Cela signifie que nous nous chargeons des applications du Cerema pour les maintenir ou ajouter de nouvelles fonctionnalités. Le client nous met à disposition le code sur Gitlab, nous fait part de ses besoins grâce à l'outil Projektor, puis nous commande les tickets nécessaires.",
                "content2": "Une fois cela fait, nous étudions la demande et fournissons un chiffrage (nombre de jours-homme que nous vendons pour réaliser la demande). Si le chiffrage est accepté, nous commençons les développements et livrons le résultat sur le Gitlab du client.",
                "class": "introduction",
@@ -120,27 +118,74 @@
             {
                "title": "Mon rôle",
                "content": "Dans ce projet, j'ai eu l'occasion de passer par toutes les étapes de la gestion d'un projet de TTMA. J'ai réalisé des \"prises en compte produit\", c'est-à-dire que j'ai étudié les applications du client, compris ce qui fonctionne (et ce qui ne fonctionne pas), fouiné pour savoir s'il n'y avait pas d'énormités. Et j'ai informé le client de ce qui allait ou non en l'incitant à commander des mises à niveau.",
-               "content2": "J'ai pu développer les fonctionnalités demandées sur une multitude d'applications n'ayant aucun rapport au niveau métier. Par exemple, une application de gestion des ressources humaines, une application de gestion des eaux usées et de l'assainissement, une application de suivi des ressources minérales sous forme de carte de la France, une application de suivi des utilisations des gares sous forme de carte de la France, et une application de conseil aux collectivités sur le choix des plantes à utiliser en fonction de multiples critères.",
-               "class": "introduction"
+               "content2": "J'ai pu développer les fonctionnalités demandées sur une multitude d'applications n'ayant aucun rapport au niveau métier. Par exemple, une application de gestion des ressources humaines, une application de gestion des eaux usées et de l'assainissement, une application de suivi des ressources minérales sous forme de carte de la France, une application de suivi des utilisations des gares sous forme de carte de la France, et une application de conseil aux collectivités sur le choix des plantes à utiliser en fonction de multiples critères."
+            },
+            {
+               "title": "Outils",
+               "image": "./assets/projets/cerema/angular.jpg",
+               "image2": "./assets/projets/cerema/spring.png",
+               "content": "Lors de mon expérience au Cerema, j'ai intégré l'équipe Java Web, où j'ai travaillé avec les frameworks Angular (pour le front-end) et Spring Boot (pour le back-end).J'ai débuté par une formation de trois jours sur Angular, axée sur les bases du framework. Le fil rouge de cette formation consistait en la réalisation d'une application consommant une API interne à Clemessy, permettant d'obtenir un token d'accès à une liste de contrôleurs. Cette formation m’a permis de me familiariser avec Angular et d’acquérir les bonnes pratiques avant de contribuer aux applications développées au Cerema.En parallèle, j’ai progressivement appris à utiliser Spring Boot, un framework orienté back-end facilitant le développement d'applications web et de microservices.",
+               "content2": "J’ai pu approfondir mes compétences en travaillant notamment sur les dizaines d'applications que nous maintenont",
+               "size": "petit"
+            },
+            {
+               "title": "SODA",
+               "content": "",
+               "content2": ""
             }
 
          ]
        },
        {
-          "id":3,
-          "title":"...",
-          "description":"...",
-          "image":"./assets/projets/card3.jpg",
-          "roleItems":[
-             "..."
-          ],
-          "technologies":[
-             "...",
-             "..."
-          ],
-          "results":[
-             "..."
-          ]
+         "id":3,
+         "title":"Génération augmentée de récupération",
+         "description":"Développement d'un système de question-réponse basé sur des documents internes, combinant la recherche sémantique avec des modèles LLM.",
+         "image":"./assets/projets/entete/rag.png",
+         "roleItems":[
+            "Mise en place de la base vectorielle pour indexation des documents",
+            "Intégration d’un modèle LLM avec gestion du contexte",
+            "(Futur) Création d’un frontend de démonstration pour les utilisateurs"
+         ],
+         "technologies":[
+            "Python",
+            "LangChain",
+            "Mistral API",
+            "Docker"
+         ],
+         "results":[
+            "Aide à la recherche des réponses grâce au LLM.",
+            "Réduction du temps de recherche d’information dans les documents internes.",
+            "Création d’une preuve de concept validée par les utilisateurs métiers.",
+            "(Futur) Architecture scalable et facilement déployable en local ou dans le cloud."
+         ],
+         "information":[
+            {
+               "title":"Introduction",
+               "content":"Le projet RAG (Retrieval-Augmented Generation) vise à concevoir une application intelligente capable de répondre aux questions des utilisateurs à partir d’un ensemble de documents internes (PDF, DOCX, etc.). Le système s’appuie sur une base vectorielle et un modèle de génération de texte pour fournir des réponses contextualisées et précises.",
+               "content2":"Le RAG associe la recherche documentaire (retrieval) avec la génération de texte (generation), ce qui sort des réponses pertinentes même en dehors des cas d'entrainement du modèle.",
+               "size":"moyen"
+            },
+            {
+               "title":"Mon rôle",
+               "content":"J’ai été en charge  de l’architecture du projet : vectorisation (via des embeddings) dez textes / documents, tests sur l'API Mitral. Création du code python pour créer une interface utilisateur.",
+               "content2":""
+            },
+            {
+               "title":"Fonctionnement du RAG",
+               "image":"./assets/projets/rag/rag_1.png",
+               "image2":"./assets/projets/rag/rag_2.png",
+               "content":"Le fonctionnement du RAG commence par la segmentation des documents en chunks (morceaux de 1000 caractères) cohérents. Chaque chunk est ensuite transformé en vecteur à l’aide d’un modèle d’embedding. Ces vecteurs sont stockés dans une base vectorielle (FAISS). Lorsqu’une question est posée, elle est elle-même vectorisée puis comparée aux vecteurs de la base afin de retrouver les passages les plus pertinents.",
+               "content2":"Les passages récupérés sont ensuite injectés dans le prompt du LLM (Mistral AI), qui génère la réponse à la question posée.",
+               "class": "introduction",
+               "size":"moyen"
+            },
+            {
+               "title":"Déploiement et tests",
+               "content":"(Futur) Le projet sera dockerisé pour simplifier le déploiement. Des tests de charge seront effectués pour valider les performances du système sous différentes charges d’utilisateurs. Des métriques de pertinence et de satisfaction utilisateur seront réalisés.",
+               "content2":"",
+               "size":"moyen"
+            }
+         ]
        }
     ]
  }
