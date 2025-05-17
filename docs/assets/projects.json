@@ -122,25 +122,38 @@
             },
             {
                "title": "Outils",
-               "image": "./assets/projets/cerema/angular.jpg",
+               "image": "./assets/projets/cerema/angular.png",
                "image2": "./assets/projets/cerema/spring.png",
                "content": "Lors de mon expérience au Cerema, j'ai intégré l'équipe Java Web, où j'ai travaillé avec les frameworks Angular (pour le front-end) et Spring Boot (pour le back-end).J'ai débuté par une formation de trois jours sur Angular, axée sur les bases du framework. Le fil rouge de cette formation consistait en la réalisation d'une application consommant une API interne à Clemessy, permettant d'obtenir un token d'accès à une liste de contrôleurs. Cette formation m’a permis de me familiariser avec Angular et d’acquérir les bonnes pratiques avant de contribuer aux applications développées au Cerema.En parallèle, j’ai progressivement appris à utiliser Spring Boot, un framework orienté back-end facilitant le développement d'applications web et de microservices.",
                "content2": "J’ai pu approfondir mes compétences en travaillant notamment sur les dizaines d'applications que nous maintenont",
-               "size": "petit"
+               "size": "tres-petit"
+            },
+            {
+               "title": "SESAME",
+               "image": "./assets/projets/cerema/questionnaire.png",
+               "image2": "./assets/projets/cerema/resultat.png",
+               "content": "Destiné en particulier aux collectivités, Sésame permet d’identifier les espèces les plus à même de produire les services attendus dans le cadre de projets d’aménagement ou de végétalisation. L’application est constituée d’un grand formulaire pour chaque collectivité et ensuite, l’application propose un lot de plantes adapté aux besoins.",
+               "content2": "Lorsque nous avons récupéré l’application, SESAME s’occupait de deux collectivités (Metz et Moselle), et le code était en «dur». L’objectif était de rendre l’application modulaire à toutes les collectivités et leurs spécificités, ainsi que de créer un moyen d’importer les données des nouvelles collectivités collaborantes (comme Angoulême).",
+               "size": "moyen",
+               "class": "introduction"
             },
             {
                "title": "SODA",
-               "content": "",
-               "content2": ""
+               "content": "SODA est une application RH proposant un suivi des candidats pour les fiches de postes du CEREMA. Plusieurs candidats postulent à une fiche de poste et les RH choisissent la meilleure candidature, et remplissent des formulaires pour valider l’embauche.",
+               "content2": "Mon travail sur ce projet était des résolutions de tickets diverses. Tel que la réalisation des 2 dernières étapes. Étapes de validation automatique lors de l’arrivée du candidat et l’étape de la signature de la candidature avec l’envoi du document sur le cloud. Ou encore la communication avec l’application PIRAMID (application RH répertoriant tous les employés) pour mettre à jour les modifications des futurs employés."
+            },
+            {
+               "title": "RESILIEAU",
+               "content": "RESILIEAU...",
+               "content2": "J'ai trouvé lors de la prise en compte de l'application un problème d'injection de données. ."
             }
-
          ]
        },
        {
          "id":3,
          "title":"Génération augmentée de récupération",
          "description":"Développement d'un système de question-réponse basé sur des documents internes, combinant la recherche sémantique avec des modèles LLM.",
-         "image":"./assets/projets/entete/rag.png",
+         "image":"./assets/proœjets/entete/rag.png",
          "roleItems":[
             "Mise en place de la base vectorielle pour indexation des documents",
             "Intégration d’un modèle LLM avec gestion du contexte",
@@ -173,7 +186,6 @@
             {
                "title":"Fonctionnement du RAG",
                "image":"./assets/projets/rag/rag_1.png",
-               "image2":"./assets/projets/rag/rag_2.png",
                "content":"Le fonctionnement du RAG commence par la segmentation des documents en chunks (morceaux de 1000 caractères) cohérents. Chaque chunk est ensuite transformé en vecteur à l’aide d’un modèle d’embedding. Ces vecteurs sont stockés dans une base vectorielle (FAISS). Lorsqu’une question est posée, elle est elle-même vectorisée puis comparée aux vecteurs de la base afin de retrouver les passages les plus pertinents.",
                "content2":"Les passages récupérés sont ensuite injectés dans le prompt du LLM (Mistral AI), qui génère la réponse à la question posée.",
                "class": "introduction",

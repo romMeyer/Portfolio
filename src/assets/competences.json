@@ -5,11 +5,11 @@
     "sousCompetence": [
       {
         "title": "Choisir et implémenter les architectures adaptées",
-        "description": "Participation à la conception d'une solution RAG (Retrieval-Augmented Generation) avec le modèle Mistral, en choisissant une architecture adaptée à l'intégration de LLMs et d'un moteur de recherche vectoriel. J'ai contribué à la définition des composants clés comme les modèles utilisée et l'intégration de la solution sur un contrôlleur au sein des bureaux."
+        "description": "Participation à la conception d'une solution RAG (Retrieval-Augmented Generation) avec le modèle Mistral, en choisissant une architecture adaptée à l'intégration de LLMs et d'un moteur de recherche vectoriel. J'ai contribué à la définition des composants clés comme les modèles utilisés et l'intégration de la solution sur un contrôleur au sein des bureaux."
       },
       {
         "title": "Faire évoluer une application existante",
-        "description": "Maintenance évolutive de plusieurs applications pour le CEREMA dans le cadre de la TMA. Mes tâches ont consisté à ajouter de nouvelles fonctionnalités comme de l'archivage des méthode de calcul pour l'application DROPI. Ou encore la réalisation du traitement des arrivées candidats pour le CEREMA. Corriger des bugs liés à de la génération de fichier .docx. Améliorer la performance ou l'ergonomie sur des modules tels que l'importation des données de l'application SESAME, de grand fichiers excel à traités en base de données."
+        "description": "Maintenance évolutive de plusieurs applications pour le CEREMA dans le cadre de la TMA. Mes tâches ont consisté à ajouter de nouvelles fonctionnalités comme de l'archivage des méthodes de calcul pour l'application DROPI. Ou encore la réalisation du traitement des arrivées de candidats pour le CEREMA. Corriger des bugs liés à la génération de fichier DOCX. Améliorer la performance ou l'ergonomie sur des modules tels que l'importation des données de l'application SESAME, de grands fichiers EXCEL à traiter en base de données."
       },
       {
         "title": "Intégrer des solutions dans un environnement de production",
@@ -23,15 +23,15 @@
     "sousCompetence": [
       {
         "title": "Anticiper les résultats de diverses métriques (temps d'exécution, occupation mémoire...)",
-        "description": "Optimisation d’un pipeline basé sur YOLO, en veillant à maintenir un bon compromis entre précision et vitesse. J’ai mis en place des tests de performance sur les métriques de temps de traitement des images selon le modèle utilisé (small-large), puis proposé des ajustements comme le materiel, les outils de traitement du flux vidéo et les programmes python qui traitent les sorties de notre modèle."
+        "description": "Optimisation d’un pipeline basé sur YOLO, en veillant à maintenir un bon compromis entre précision et vitesse. J’ai mis en place des tests de performance sur les métriques de temps de traitement des images selon le modèle utilisé (small-large), puis proposé des ajustements comme le matériel, les outils de traitement du flux vidéo et les programmes python qui traitent les sorties de notre modèle."
       },
       {
         "title": "Profiler, analyser et justifier le comportement d'un code existant",
-        "description": "J’ai utilisé des outils de profiling comme SonarQube pour analyser les performances d’applications en production. Cela m’a permis d’identifier des goulots d’étranglement dans l'application SESAME lors de l'import des données au démarrage du serveur, et de justifier les améliorations proposées auprès du responsable de l'application. Sur RESILIEAU(outils d'évaluation des collectivité pour le traitement de l'eau potable et assainissement), j'ai décelé une erreur d'injection. En effet, l'application permet de remplir des formulaires pour donner une note au collectivité, mais à l'aide d'un outils tel que Postman, il est possible de modifier les données des autres utilisateurs. J'ai du implémenté un système d'autorisation (et interdiction) pour limité les droits d'écriture dans l'application."
+        "description": "J’ai utilisé des outils de profiling comme SonarQube pour analyser les performances d’applications en production. Cela m’a permis d’identifier des goulots d’étranglement dans l'application SESAME lors de l'import des données au démarrage du serveur, et de justifier les améliorations proposées auprès du responsable de l'application. Sur RESILIEAU(outils d'évaluation des collectivités pour le traitement de l'eau potable et l'assainissement), j'ai décelé une erreur d'injection. En effet, l'application permet de remplir des formulaires pour donner une note aux collectivités, mais à l'aide d'un outil tel que Postman, il est possible de modifier les données des autres utilisateurs. J'ai du implémenter un système d'autorisation (et interdiction) pour limiter les droits d'écriture dans l'application."
       },
       {
         "title": "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéos,",
-        "description": "Sélection et mise en œuvre de bibliothèques spécialisées comme YOLOv8 (bientôt YOLOv12) pour la vision par ordinateur. LangChain et MistralIa pour le RAG, le choix des outils s’est basé sur les critères de performance de nos machines et des documents à traités du commercial."
+        "description": "Sélection et mise en œuvre de bibliothèques spécialisées comme YOLOv8 (bientôt YOLOv12) pour la vision par ordinateur. LangChain et MistralIa pour le RAG, le choix des outils s’est basé sur les critères de performance de nos machines et des documents à traiter du commercial."
       }
     ]
   },
@@ -41,7 +41,7 @@
     "sousCompetence": [
       {
         "title": "Organiser et partager une veille numérique",
-        "description": "Réalisation de différentes réunion lors de la semaine pour partager de nos problèmes rencontrés, et de nouvelles technologie découverte lors de nos recherche comme de nouvelle librairie automatisants des tâches (MAPSTRUCT pour le code),(TELNET pour assistant IA)."
+        "description": "Réalisation de différentes réunions lors de la semaine pour partager nos problèmes rencontrés, et de nouvelles technologies découvertes lors de nos recherches comme de nouvelles librairies automatisant  des tâches (MAPSTRUCT pour le code),(TELNET pour assistant IA)."
       },
       {
         "title": "Guider la conduite du changement informatique au sein d'une organisation",

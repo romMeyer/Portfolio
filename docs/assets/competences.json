@@ -27,7 +27,7 @@
       },
       {
         "title": "Profiler, analyser et justifier le comportement d'un code existant",
-        "description": "J’ai utilisé des outils de profiling comme SonarQube pour analyser les performances d’applications en production. Cela m’a permis d’identifier des goulots d’étranglement dans l'application SESAME lors de l'import des données au démarrage du serveur, et de justifier les améliorations proposées auprès du responsable de l'application."
+        "description": "J’ai utilisé des outils de profiling comme SonarQube pour analyser les performances d’applications en production. Cela m’a permis d’identifier des goulots d’étranglement dans l'application SESAME lors de l'import des données au démarrage du serveur, et de justifier les améliorations proposées auprès du responsable de l'application. Sur RESILIEAU(outils d'évaluation des collectivité pour le traitement de l'eau potable et assainissement), j'ai décelé une erreur d'injection. En effet, l'application permet de remplir des formulaires pour donner une note au collectivité, mais à l'aide d'un outils tel que Postman, il est possible de modifier les données des autres utilisateurs. J'ai du implémenté un système d'autorisation (et interdiction) pour limité les droits d'écriture dans l'application."
       },
       {
         "title": "Choisir et utiliser des bibliothèques et méthodes dédiées au domaine d'application (imagerie, immersion, intelligence artificielle, jeux vidéos,",
