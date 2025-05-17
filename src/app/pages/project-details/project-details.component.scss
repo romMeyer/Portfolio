@@ -10,8 +10,24 @@
   background: rgba(255, 255, 255, 0.8); /* Couche translucide sur le fond */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+  color: #1c1c1c;
 }
+.mdc-list-item {
+  --mdc-list-list-item-label-text-color: #1c1c1c; 
+}
+
+mat-chip {
+  background-color: $portfolio-accent !important;
+}
+
+mat-card{
+  background-color: #EEEEEE;
+}
+
+mat-card-content{ 
+  text-align: justify;
+}
+
 .containerInfo {
   max-width: 80%;
   margin: 20px auto;
@@ -21,6 +37,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  color: #1c1c1c;
   background: rgba(255, 255, 255, 0.8); /* Couche translucide sur le fond */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -28,7 +45,7 @@
 }
 
 .cardInformation {
-  max-width: 46%;
+  max-width: 46.5%;
   height: 100%;
   .image{
     display: flex;
@@ -46,7 +63,11 @@
 }
 
 .introduction{
-  max-width: 90%;
+  max-width: 95%;
+}
+
+.tres-petit{
+  width: 25%;
 }
 
 .petit{
@@ -63,6 +84,8 @@
 
 img{
   width: 100%;
+  margin-bottom: 5px;
+  border-radius: 3%;
 }
 
 /* Fond d'écran de la page */
@@ -94,7 +117,8 @@ img{
 
 .card-title{
   background-color: $portfolio-primary;
-
+  color: white;
+  font-weight: 2000;
 }
 
 // Téléphone

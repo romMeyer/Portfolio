@@ -16,7 +16,7 @@
     </mat-card-header>
     <mat-card-content>
     <mat-list>
-        <mat-list-item *ngFor="let item of project.roleItems">{{ item }}</mat-list-item>
+        <mat-list-item class="test" *ngFor="let item of project.roleItems">{{ item }}</mat-list-item>
     </mat-list>
     </mat-card-content>
 </mat-card>
@@ -70,6 +70,9 @@
             <mat-card-content>
                 {{ item.content2 }}
             </mat-card-content>
+            <div class="image">
+                <img [class]="item.size" *ngIf="item.image3" mat-card-image [src]="item.image3" [alt]="item.image3">
+            </div>
     </mat-card>
     </ng-container>
     

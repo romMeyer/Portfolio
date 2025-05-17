@@ -24,6 +24,7 @@ export interface ProjectInformation{
     content2?: string;
     image?: string;
     image2?: string;
+    image3?: string;
     class?: string;
     size?: string;
 }
