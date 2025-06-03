@@ -1,124 +1,36 @@
-import { Component } from '@angular/core';
-interface Experience {
-  poste: string;
-  entreprise: string;
-  periode: string;
-  description: string;
-  technologies?: string[];
-}
+import { Component, OnInit } from '@angular/core';
+import { CvService } from '../../services/CvService';
+import { Profil, Experience, Formation, ProjetCV, Competence, Langues } from '../../core/Dto/HomeDto';
 
-interface Formation {
-  diplome: string;
-  etablissement: string;
-  annee: string;
-  mention?: string;
-}
-
-interface Competence {
-  nom: string;
-  niveau: number;
-  categorie: string;
-}
-
-interface Projet{
-  nom: string;
-  description: string;
-  technologies?: string[];
-  annee: string;
-}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  profil = {
-    nom: 'Meyer',
-    prenom: 'Romain',
-    titre: 'Alternant développeur Full Stack',
-    description: 'J’ai 20 ans et je suis étudiant en BUT informatique et je suis passionné par la programmation depuis le collège. Je suis alternant chez Clemessy et continue dans cette voie pour mon Master.',
-    email: 'romain.meyer@email.com',
-    telephone: '+33 6 12 34 56 78',
-    localisation: 'Franche-Compté, France',
-    github: 'github.com/romMeyer'
-  };
+export class HomeComponent implements OnInit {
+  constructor(private cvService: CvService){}
 
-  experiences: Experience[] = [
-    {
-      poste: 'Développeur',
-      entreprise: 'Clemessy Mulhouse',
-      periode: 'Septembre 2023 - Présent',
-      description: 'Développement d’une IA avec Yolo8 pour compter des véhicule sur les aires de repos. Développement de fonctionnalités full-stack avec Angular et SpringBoot. Développement d’un RAG avec MistralAI',
-      technologies: ['HTML / CSS', 'JavaScript / TypeScript', 'Angular', 'SpringBoot', 'Git / GitHub / GitLab', 'Node.js']
-    }
-  ];
+  profil!: Profil;
+  experiences: Experience[] = [];
+  formations: Formation[] = [];
+  projets: ProjetCV[] = [];
+  competences: Competence[] = [];
+  langues: Langues[] = [];
+  interets: string[] = [];
 
-  formations: Formation[] = [
-    {
-      diplome: 'Master Informatique - Spécialité Réseaux et objets connectés',
-      etablissement: 'Université Cnam Grand Est ',
-      annee: '2025',
-    },
-    {
-      diplome: 'BUT Informatique',
-      etablissement: 'Université Marie & Louis Pasteur',
-      annee: '2022',
-      mention: '/'
-    }
-  ];
-
-  projets: Projet[] =[
-    {
-      nom: 'Demeter',
-      description: 'Application de suivie du jardinage',
-      technologies: ['Java', 'SpringBoot', 'Angular', 'Postgres', 'Docker'],
-      annee: '2025'
-    },
-    {
-      nom: 'RAG',
-      description: 'Développement d’un système de question-réponse basé sur des documents internes, combinant la recherche sémantique avec des modèles LLM',
-      technologies: ['Python', 'LangChain', 'Mistral API', 'Docker'],
-      annee: '2025'
-    },
-    {
-      nom: 'Tièrce maintenance applicative',
-      description: 'Projet de tierce maintenance applicative (TMA) pour le CEREMA. L’objectif principal était de garantir la disponibilité, la performance et l’évolutivité des applications utilisées par cet organisme public stratégique.',
-      technologies: ['Java', 'SpringBoot', 'Angular', 'Postgres', 'Docker', 'Git'],
-      annee: '2024 - 2025'
-    },
-    {
-      nom: 'A79 Comptage Poid lourd',
-      description: 'Comptage de véhicules dans les aires de repos grâce à l’intelligence artificielle',
-      technologies: ['Python', 'YOLO', 'SSH', 'LINUX', 'RTSP'],
-      annee: '2023 - 2024'
-    },
-  ]
-
-  competences: Competence[] = [
-    { nom: 'Angular', niveau: 50, categorie: 'Frontend' },
-    { nom: 'TypeScript', niveau: 50, categorie: 'Frontend' },
-    { nom: 'Vue.js', niveau: 30, categorie: 'Frontend' },
-    { nom: 'SpringBoot', niveau: 50, categorie: 'Backend' },
-    { nom: 'Node.js', niveau: 50, categorie: 'Backend' },
-    { nom: 'MongoDB', niveau: 30, categorie: 'Backend' },
-    { nom: 'PostgreSQL', niveau: 50, categorie: 'Backend' },
-    { nom: 'Docker', niveau: 30, categorie: 'DevOps' },
-    { nom: 'Git', niveau: 50, categorie: 'DevOps' }
-  ];
-
-  langues = [
-    { nom: 'Français', niveau: 'Natif' },
-    { nom: 'Anglais', niveau: 'B2 (TOEIC: 905/990)' },
-  ];
-
-  interets = [
-    'Escalade / Musculation',
-    'Intelligence Artificielle',
-    'Jeux de société / vidéo',
-    'Cuisine',
-    'Développement Full Stack (cf github)'
-  ];
+  ngOnInit(): void {
+    this.cvService.getCv().subscribe(data => {
+      this.profil = data.profil;
+      this.experiences = data.experiences;
+      this.formations = data.formations;
+      this.projets = data.projetsCV;
+      this.competences = data.competences;
+      this.langues = data.langues;
+      this.interets = data.interets;
+    });
+  }
+ 
 
   getCompetencesCategories(): string[] {
     return [...new Set(this.competences.map(comp => comp.categorie))];

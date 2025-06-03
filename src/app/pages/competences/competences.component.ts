@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CompetenceDto } from '../../core/Dto/CompetenceDto';
 import { CompetencesService } from '../../services/CompetenceService';
 
@@ -7,7 +7,7 @@ import { CompetencesService } from '../../services/CompetenceService';
   templateUrl: './competences.component.html',
   styleUrl: './competences.component.scss'
 })
-export class CompetencesComponent {
+export class CompetencesComponent implements OnInit {
   competences: CompetenceDto[] = [];
 
   constructor(private competencesService: CompetencesService){}
