@@ -1,7 +1,7 @@
 export interface CompetenceDto{
-    id: number;
     title: string;
     sousCompetence: SousCompetenceDto[];
+    icon: string;
 }
 
 export interface SousCompetenceDto{

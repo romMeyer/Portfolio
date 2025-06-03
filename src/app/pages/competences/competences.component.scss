@@ -1,53 +1,305 @@
-@use "../../../styles.scss" as *; // Importe le fichier contenant les variables
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 16px;
-  }
-
-.card {
-  width: 30%;
-  background-color: #dfdfdf;
-  color: #1c1c1c;
-  height: 100%;
+.competences-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
 }
 
-mat-card-title{
-  font-size: 30px;
-  font-weight: 500;
-  background-color: $portfolio-accent;
+.intro-section {
+  text-align: center;
+  margin: 40px 0 60px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-section h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.intro-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.intro-section p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.competence-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  background: white;
+}
+
+.competence-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  position: relative;
+  padding: 30px;
   color: white;
+  overflow: hidden;
 }
 
-mat-card-subtitle {
-  font-size: 20px;
-  font-weight: 500;
-  color: #1c1c1c;
-  margin-top: 15px;
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
-.subCompetences{
-  margin-top: 20px;
+.icon-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.competence-icon {
+  font-size: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-decoration {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.sous-competences {
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
+.sous-competence-item {
+  position: relative;
+}
 
-mat-card-content{ 
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.item-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.bullet-icon {
+  font-size: 0.8rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  color: #3498db;
+}
+
+.niveau-badge {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.item-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 15px;
   text-align: justify;
 }
 
-// Téléphone
+.progress-container {
+  margin: 15px 0;
+}
+
+.progress-container mat-progress-bar {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.tags-container {
+  margin-top: 15px;
+}
+
+.skill-tag {
+  background: #ecf0f1;
+  color: #2c3e50;
+  font-size: 0.85rem;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e1e8ed, transparent);
+  margin: 20px 0;
+}
+
+.card-footer {
+  padding: 20px 30px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.learn-more-btn {
+  color: #667eea;
+  font-weight: 500;
+}
+
+.stats-section {
+  margin: 80px 0 40px 0;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Couleurs spécifiques par carte */
+.card-0 .card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-1 .card-header {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.card-2 .card-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
+  .competences-page {
+    padding: 15px;
   }
 
-  .card {
-    width: 85%;
-    margin-bottom: 30px;
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 0 10px;
+  }
+
+  .intro-section h2 {
+    font-size: 2rem;
+  }
+
+  .intro-section p {
+    font-size: 1.1rem;
+  }
+
+  .card-header {
+    padding: 25px 20px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 25px 20px;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }

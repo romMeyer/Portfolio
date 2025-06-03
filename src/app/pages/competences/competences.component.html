@@ -1,17 +1,45 @@
-<app-title title="Mes compétences"></app-title>
+<div class="competences-page">
+  <app-title title="Mes compétences"></app-title>
 
-<div class="card-container">
-  <mat-card *ngFor="let competence of competences" class="card">
-    <mat-card-title>{{ competence.title }}</mat-card-title>
-    <div class="subCompetences">
-
-      <ng-container *ngFor="let item of competence.sousCompetence">
-        <mat-card-subtitle>{{ item.title }}</mat-card-subtitle>
-        <mat-card-content>{{ item.description }}</mat-card-content>
-      </ng-container>
+  <!-- Conteneur des cartes -->
+  <div class="cards-container">
+    <mat-card 
+      *ngFor="let competence of competences; let i = index" 
+      class="competence-card"
+      [class]="'card-' + i">
       
-    </div>
-  </mat-card>
-</div>
+      <!-- En-tête de la carte -->
+      <div class="card-header">
+        <div class="header-content">
+          <div class="icon-container">
+            <mat-icon class="competence-icon">{{ competence.icon }}</mat-icon>
+          </div>
+          <h3 class="card-title">{{ competence.title }}</h3>
+        </div>
+        <div class="header-decoration"></div>
+      </div>
 
-<app-footer></app-footer>
+      <!-- Contenu de la carte -->
+      <mat-card-content class="card-body">
+        <div class="sous-competences">
+          <div 
+            *ngFor="let item of competence.sousCompetence; let last = last" 
+            class="sous-competence-item">
+            
+            <div class="item-header">
+              <h4 class="item-title">
+                <mat-icon class="bullet-icon">fiber_manual_record</mat-icon>
+                {{ item.title }}
+              </h4>
+            </div>
+            <p class="item-description">{{ item.description }}</p>
+
+            <div *ngIf="!last" class="divider"></div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>
+</div>
