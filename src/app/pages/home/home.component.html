@@ -1,60 +1,188 @@
-<app-title title="Profil"></app-title>
-
-<div class="all">
-
-  <header>
-    <div class="container">
-      <div class="profile-info">
-        <h1>Romain MEYER</h1>
-        <h2>Développeur</h2>
-        <p>Adresse : 3 Allée du stade, Lachapelle Sous Rougemont</p>
-        <p>Email : romain.meyer.fkpt-gmail.com</p>
-        <p>Téléphone : +33 6 12 34 56 78</p>
+<div class="cv-container">
+  <!-- En-tête -->
+  <mat-card class="header-card">
+    <mat-card-content>
+      <div class="header-content">
+        <div class="avatar-section">
+          <div class="avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+        </div>
+        <div class="info-section">
+          <h1>{{ profil.nom }} {{ profil.prenom }}</h1>
+          <h2>{{ profil.titre }}</h2>
+          <p class="description">{{ profil.description }}</p>
+          <div class="contact-info">
+            <div class="contact-item">
+              <mat-icon>email</mat-icon>
+              <span>{{ profil.email }}</span>
+            </div>
+            <div class="contact-item">
+              <mat-icon>phone</mat-icon>
+              <span>{{ profil.telephone }}</span>
+            </div>
+            <div class="contact-item">
+              <mat-icon>location_on</mat-icon>
+              <span>{{ profil.localisation }}</span>
+            </div>
+            <div class="contact-item">
+              <mat-icon>link</mat-icon>
+              <span>{{ profil.github }}</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </header>
+    </mat-card-content>
+  </mat-card>
 
-  <section class="skills">
-    <h2>Compétences</h2>
-    <ul>
-      <li>HTML / CSS</li>
-      <li>JavaScript / TypeScript</li>
-      <li>Angular</li>
-      <li>SpringBoot</li>
-      <li>Git / GitHub / GitLab</li>
-      <li>Node.js</li>
-    </ul>
-  </section>
+  <div class="content-grid">
+    <!-- Colonne principale -->
+    <div class="main-column">
+      <!-- Expériences -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>work</mat-icon>
+            Expériences professionnelles
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="experience-list">
+            <div *ngFor="let exp of experiences; let last = last" class="experience-item">
+              <div class="experience-header">
+                <h3>{{ exp.poste }}</h3>
+                <span class="periode">{{ exp.periode }}</span>
+              </div>
+              <h4>{{ exp.entreprise }}</h4>
+              <p>{{ exp.description }}</p>
+              <div *ngIf="exp.technologies" class="technologies">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let tech of exp.technologies">{{ tech }}</mat-chip>
+                </mat-chip-set>
+              </div>
+              <mat-divider *ngIf="!last"></mat-divider>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
 
-  <section class="experience">
-    <h2>Expérience professionnelle</h2>
-    <div class="job">
-      <h3>TECHNICIEN ETUDES TECHNIQUE | Clemessy</h3>
-      <p>Septembre 2023 - Septembre 2025</p>
-      <p>Développement d'une IA avec Yolo8 pour compter des véhicule sur les aires de repos.</p>
-      <p>Développement de fonctionnalités full-stack avec Angular et SpringBoot.</p>
-      <p>Développement d'un RAG avec MistralIA.</p>
-    </div>
-    <div class="job">
-      <h3>Développeur Junior | Agence ABC</h3>
-      <p>Juin 2018 - Décembre 2019</p>
-      <p>Participation au développement de sites web et applications pour des clients divers.</p>
-    </div>
-  </section>
+      <!-- Formation -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>school</mat-icon>
+            Formation
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="formation-list">
+            <div *ngFor="let form of formations; let last = last" class="formation-item">
+              <div class="formation-header">
+                <h3>{{ form.diplome }}</h3>
+                <span class="annee">{{ form.annee }}</span>
+              </div>
+              <h4>{{ form.etablissement }}</h4>
+              <p *ngIf="form.mention" class="mention">{{ form.mention }}</p>
+              <mat-divider *ngIf="!last"></mat-divider>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
 
-  <section class="education">
-    <h2>Formation</h2>
-    <div class="education-item">
-      <h3>Bachelor Universitaire de Technologie | Université de Nord Franche Compté</h3>
-      <p>2022 - 2025</p>
+      <!-- Formation -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>all_inbox</mat-icon>
+            Projet
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="formation-list">
+            <div *ngFor="let proj of projets; let last = last" class="formation-item">
+              <div class="formation-header">
+                <h3>{{ proj.nom }}</h3>
+                <span class="annee">{{ proj.annee }}</span>
+              </div>
+              <h4>{{ proj.description }}</h4>
+              <div *ngIf="proj.technologies" class="technologies">
+                <mat-chip-set>
+                  <mat-chip *ngFor="let tech of proj.technologies">{{ tech }}</mat-chip>
+                </mat-chip-set>
+              </div>
+              <mat-divider *ngIf="!last"></mat-divider>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
-    <div class="education-item">
-      <h3>Baccalauréat scientifique | Lycée Gustave Courbet</h3>
-      <p>2019 - 2022</p>
-    </div>
-  </section>
 
-  <mat-toolbar color="primary" class="footer">
-    <span>&copy; 2025 Romain Meyer</span>
-  </mat-toolbar>
+    <!-- Colonne latérale -->
+    <div class="side-column">
+      <!-- Compétences -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>code</mat-icon>
+            Compétences
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="competences-section">
+            <div *ngFor="let categorie of getCompetencesCategories()" class="competence-category">
+              <h4>{{ categorie }}</h4>
+              <div *ngFor="let comp of getCompetencesByCategory(categorie)" class="competence-item">
+                <div class="competence-header">
+                  <span>{{ comp.nom }}</span>
+                  <span class="niveau-text">{{ getNiveauText(comp.niveau) }}</span>
+                </div>
+                <mat-progress-bar 
+                  mode="determinate" 
+                  value="comp.niveau">
+                </mat-progress-bar>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Langues -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>language</mat-icon>
+            Langues
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="langues-list">
+            <div *ngFor="let langue of langues" class="langue-item">
+              <div class="langue-header">
+                <span>{{ langue.nom }}</span>
+                <span class="niveau">{{ langue.niveau }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Centres d'intérêt -->
+      <mat-card class="section-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>interests</mat-icon>
+            Centres d'intérêt
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-chip-set>
+            <mat-chip *ngFor="let interet of interets">{{ interet }}</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
+
+<app-footer></app-footer>
+

@@ -1,0 +1,7 @@
+@use "../../../styles.scss" as *; // Importe le fichier contenant les variables
+
+mat-toolbar{
+  margin-top: 4.5%;
+  background: $portfolio-primary;
+  color: white
+}

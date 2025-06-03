@@ -6,8 +6,8 @@
 // Inclure les styles communs de base d'Angular Material
 @include mat.core();
 
-$portfolio-primary: mat.get-theme-color(theme.$portfolio-theme, primary);
-$portfolio-accent: mat.get-theme-color(theme.$portfolio-theme, accent);
+$portfolio-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$portfolio-accent: #8599f0;
 $portfolio-warn: mat.get-theme-color(theme.$portfolio-theme, warn);
 
 // Ajouter des styles globaux

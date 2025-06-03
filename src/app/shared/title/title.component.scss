@@ -1,8 +1,7 @@
 @use "../../../styles.scss" as *; // Importe le fichier contenant les variables
 
-
-
 h1 {
     padding: 16px;
-    background-color: $portfolio-primary;
+    background: $portfolio-primary;
+    color: white;
 }   

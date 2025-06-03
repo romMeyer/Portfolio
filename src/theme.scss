@@ -8,7 +8,7 @@ $portfolio-accent: mat.define-palette(mat.$green-palette);
 $portfolio-warn: mat.define-palette(mat.$red-palette);
 
 // Création du thème
-$portfolio-theme: mat.define-dark-theme(
+$portfolio-theme: mat.define-light-theme(
   (
     color: (
       primary: $portfolio-primary,

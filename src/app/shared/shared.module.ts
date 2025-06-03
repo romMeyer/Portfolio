@@ -3,20 +3,25 @@ import { CommonModule } from '@angular/common';
 import { TitleComponent } from './title/title.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
-    TitleComponent
+    TitleComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule
   ],
   exports: [
-    TitleComponent
+    TitleComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

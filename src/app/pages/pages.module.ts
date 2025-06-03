@@ -11,6 +11,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { SharedModule } from '../shared/shared.module';
 import { CompetencesComponent } from './competences/competences.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatChipsModule,
     SharedModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule,
+    MatProgressBarModule,
   ]
 })
 export class PagesModule { }
