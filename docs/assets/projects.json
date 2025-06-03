@@ -23,7 +23,7 @@
        {
           "id":1,
           "title":"Projet A79",
-          "description":"CA1.",
+          "description":"Comptage de véhicules dans les aires de repos grâce à l'intelligence artificielle",
           "image":"assets/projets/entete/projetA79.png",
           "roleItems":[
              "Entrainement de l'IA",
@@ -125,7 +125,7 @@
                "image": "./assets/projets/cerema/angular.png",
                "image2": "./assets/projets/cerema/spring.png",
                "content": "Lors de mon expérience au Cerema, j'ai intégré l'équipe Java Web, où j'ai travaillé avec les frameworks Angular (pour le front-end) et Spring Boot (pour le back-end).J'ai débuté par une formation de trois jours sur Angular, axée sur les bases du framework. Le fil rouge de cette formation consistait en la réalisation d'une application consommant une API interne à Clemessy, permettant d'obtenir un token d'accès à une liste de contrôleurs. Cette formation m’a permis de me familiariser avec Angular et d’acquérir les bonnes pratiques avant de contribuer aux applications développées au Cerema.En parallèle, j’ai progressivement appris à utiliser Spring Boot, un framework orienté back-end facilitant le développement d'applications web et de microservices.",
-               "content2": "J’ai pu approfondir mes compétences en travaillant notamment sur les dizaines d'applications que nous maintenont",
+               "content2": "J’ai pu approfondir mes compétences en travaillant notamment sur les dizaines d'applications que nous maintenons",
                "size": "tres-petit"
             },
             {
@@ -175,12 +175,12 @@
             {
                "title":"Introduction",
                "content":"Le projet RAG (Retrieval-Augmented Generation) vise à concevoir une application intelligente capable de répondre aux questions des utilisateurs à partir d’un ensemble de documents internes (PDF, DOCX, etc.). Le système s’appuie sur une base vectorielle et un modèle de génération de texte pour fournir des réponses contextualisées et précises.",
-               "content2":"Le RAG associe la recherche documentaire (retrieval) avec la génération de texte (generation), ce qui sort des réponses pertinentes même en dehors des cas d'entrainement du modèle.",
+               "content2":"Le RAG associe la recherche documentaire (retrieval) avec la génération de texte (generation), ce qui sort des réponses pertinentes même en dehors des cas d'entrainements du modèle.",
                "size":"moyen"
             },
             {
                "title":"Mon rôle",
-               "content":"J’ai été en charge  de l’architecture du projet : vectorisation (via des embeddings) dez textes / documents, tests sur l'API Mitral. Création du code python pour créer une interface utilisateur.",
+               "content":"J’ai été en charge  de l’architecture du projet : vectorisation (via des embeddings) des textes / documents, tests sur l'API Mitral. Création du code Python pour créer une interface utilisateur.",
                "content2":""
             },
             {
@@ -193,7 +193,7 @@
             },
             {
                "title":"Déploiement et tests",
-               "content":"(Futur) Le projet sera dockerisé pour simplifier le déploiement. Des tests de charge seront effectués pour valider les performances du système sous différentes charges d’utilisateurs. Des métriques de pertinence et de satisfaction utilisateur seront réalisés.",
+               "content":"(Futur) Le projet sera dockerisé (mis en boite pour le déploiement) pour simplifier le déploiement. Des tests de charge seront effectués pour valider les performances du système sous différentes charges d’utilisateurs. Des métriques de pertinence et de satisfaction utilisateur seront réalisées.",
                "content2":"",
                "size":"moyen"
             }
