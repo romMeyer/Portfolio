@@ -1,29 +1,87 @@
-<mat-drawer-container class="main">
+<mat-drawer-container class="drawer-container">
+  <!-- Sidebar -->
   <mat-drawer
     [mode]="drawerMode"
     [opened]="drawerOpened"
+    [disableClose]="drawerMode === 'side'"
     (closedStart)="drawerOpened = false"
-  >
-    <div class="navbar">
-      <a routerLink="/profil" class="space" (click)="closeDrawerIfMobile()">
-        <img src="/assets/photoProfil.jpg" alt="Photo Romain Meyer" height="150" width="150" />
-      </a>
-      <a mat-stroked-button color="primary" routerLink="/profil" class="navbarButton" (click)="closeDrawerIfMobile()">
-        Qui suis-je ?
-      </a>
-      <a mat-stroked-button color="primary" routerLink="/projets" class="navbarButton" (click)="closeDrawerIfMobile()">
-        Mes projets
-      </a>
-      <a mat-stroked-button color="primary" routerLink="/competences" class="navbarButton" (click)="closeDrawerIfMobile()">
-        Compétences
-      </a>
+    class="sidebar">
+    
+    <div class="sidebar-content">
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <div class="profile-image-container" routerLink="/profil" (click)="closeDrawerIfMobile()">
+          <img src="/assets/photoProfil.jpg" alt="Photo Romain Meyer" class="profile-image" />
+        </div>
+        
+        <div class="profile-info">
+          <h2 class="profile-name">Romain Meyer</h2>
+          <p class="profile-title">Alternant Développeur</p>
+        </div>
+      </div>
+
+      <!-- Navigation Menu -->
+      <nav class="navigation-menu">
+        <h3 class="menu-title">Navigation</h3>
+        <div class="nav-items">
+          <a 
+            *ngFor="let item of navItems" 
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            class="nav-item"
+            [matTooltip]="drawerMode === 'over' ? '' : item.description"
+            matTooltipPosition="right"
+            (click)="closeDrawerIfMobile()">
+            
+            <div class="nav-item-content">
+              <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+              <span class="nav-label">{{ item.label }}</span>
+              <div class="nav-indicator"></div>
+            </div>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Footer -->
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a target="_blank" href="https://linkedin.com/in/romain-meyer-200043280/" mat-icon-button class="social-btn linkedin" matTooltip="LinkedIn">
+            <mat-icon>web</mat-icon>
+          </a>
+          <a target="_blank" href="https://github.com/romMeyer" mat-icon-button class="social-btn github" matTooltip="GitHub">
+            <mat-icon>code</mat-icon>
+          </a>
+          <a mat-icon-button class="social-btn email" matTooltip="Email">
+            <mat-icon>email</mat-icon>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Romain Meyer</p>
+      </div>
     </div>
   </mat-drawer>
 
-  <mat-drawer-content>
-    <button *ngIf="drawerMode === 'over'" mat-icon-button (click)="drawerOpened = true" class="menu-button"    >
+  <!-- Main Content -->
+  <mat-drawer-content class="main-content">
+    <!-- Mobile Menu Button -->
+    <button 
+      *ngIf="drawerMode === 'over'" 
+      mat-fab 
+      color="primary"
+      (click)="drawerOpened = true" 
+      class="mobile-menu-btn">
       <mat-icon>menu</mat-icon>
     </button>
-    <router-outlet></router-outlet>
+
+    <!-- Page Content -->
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div 
+      *ngIf="drawerMode === 'over' && drawerOpened" 
+      class="mobile-overlay"
+      (click)="drawerOpened = false">
+    </div>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -1,43 +1,285 @@
-@use "../styles.scss" as *;
-
-.main{
-    width: 100%;
-    height: 100%;
-    background-color: #ececec;
+.drawer-container {
+    height: 100vh;
+    background: #f8fafc;
 }
 
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border-right: 1px solid #e2e8f0;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.05);
+}
 
-.navbar{
+.sidebar-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 205px;
-    background-color: #ececec;
-    height: 100%;
+    padding: 0;
+}
 
-    .space{
-        margin-top: 20px;
+/* Profile Section */
+.profile-section {
+    padding: 30px 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-image-container:hover .profile-overlay {
+    opacity: 1;
+}
+
+.profile-image-container:hover .profile-image {
+    transform: scale(1.05);
+}
+
+.profile-info {
+    z-index: 2;
+    position: relative;
+}
+
+.profile-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin: 0 0 15px 0;
+}
+
+.section-divider {
+    margin: 0;
+    background: #e2e8f0;
+}
+
+/* Navigation Menu */
+.navigation-menu {
+    flex: 1;
+    padding: 25px 0;
+}
+
+.menu-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 15px 25px;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: block;
+    text-decoration: none;
+    color: #475569;
+    margin: 0 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px;
+    position: relative;
+}
+
+.nav-icon {
+    margin-right: 15px;
+    font-size: 1.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.nav-label {
+    font-weight: 500;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.nav-indicator {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+    border-radius: 0 12px 12px 0;
+}
+
+.nav-item:hover {
+    background: #f1f5f9;
+    color: #3730a3;
+    transform: translateX(5px);
+}
+
+.nav-item:hover .nav-indicator {
+    width: 4px;
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    color: #3730a3;
+    font-weight: 600;
+}
+
+.nav-item.active .nav-indicator {
+    width: 4px;
+}
+
+.nav-item.active .nav-icon {
+    color: #667eea;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+    padding: 20px 25px;
+    border-top: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+.github:hover {
+    background: #333;
+    color: white;
+}
+
+.email:hover {
+    background: #ea4335;
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Main Content */
+.main-content {
+    position: relative;
+    background: #f8fafc;
+}
+
+.page-content {
+    min-height: 100vh;
+}
+
+.mobile-menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+    width: 300px;
+    }
+
+    .profile-section {
+    padding: 25px 20px;
+    }
+
+    .profile-image {
+    width: 80px;
+    height: 80px;
+    }
+
+    .profile-name {
+    font-size: 1.2rem;
+    }
+
+    .navigation-menu {
+    padding: 20px 0;
+    }
+
+    .nav-item-content {
+    padding: 12px 15px;
+    }
+
+    .quick-actions {
+    padding: 0 20px 20px 20px;
     }
 }
 
-.navbarButton{
-    font-size: 23px;
-    margin: 8px 0;
-    width: 90%;
-    height: 40px;
-    border-radius: 10px;
+@media (max-width: 480px) {
+    .sidebar {
+    width: 280px;
+    }
 }
-
-img{
-    border-radius: 40%;
-}
-
-
-.menu-button {
-    position: fixed;
-    top: 30px;
-    z-index: 1000;
-    right: 2%;
-    background-color: $portfolio-primary;
-}
-  
