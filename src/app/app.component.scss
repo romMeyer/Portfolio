@@ -1,5 +1,5 @@
 .drawer-container {
-    height: 100vh;
+    height: 100%;
     background: #f8fafc;
 }
 
@@ -224,13 +224,13 @@
 }
 
 .page-content {
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .mobile-menu-btn {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 29px;
+    right: 20px;
     z-index: 1000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
